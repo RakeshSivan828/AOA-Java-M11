@@ -1,40 +1,43 @@
 
-# EX 1A Print All Numbers 
-## DATE: 06-08-2026
+# EX 1B Power of 2
+## DATE: 06.08.2026
 ## AIM:
-To Write a Java program that takes an integer input N from the user and prints all the numbers from 1 to N, separated by spaces, on a single line..
+To write a Java program to for given constraints.Given an integer n, return true if it is a power of two. Otherwise, return false.
+
+An integer n is a power of two, if there exists an integer x such that n == 2x.
 
 ## Algorithm
 1. Start  
-2. Read input integer `n` from the user.  
-3. Initialize a loop variable `i` to 1.  
-4. Repeat the following steps while `i ≤ n`:  
-5. Print the value of `i` followed by a space.  
-6. Increment `i` by 1.  
-7. End  
-
+2. Read an integer `n` from the user.  
+3. Check if `n` is greater than 0 **and** the number of 1's in its binary representation is exactly 1 using `Integer.bitCount(n) == 1`.  
+4. If both conditions are true, return `true` — meaning `n` is a power of two. Otherwise, return `false`.  
+5. Print the result and end.  
+   
 
 ## Program:
 ```
-/*
-Developed by: AASHIKA R
-Register Number:  212222040001
-*/
+
 
 import java.util.*;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner(System.in);
-        
-        int n = sc.nextInt();
-        
-        for(int i=1;i<=n;i++)
-        {
-            System.out.print(i+" ");
-        }
+public class Solution {
+
+    public boolean isPowerOfTwo(int n) {
+     
+     return n>0 && Integer.bitCount(n)==1 ;
+     
+     
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Solution sol = new Solution();
+        int n = scanner.nextInt();
+
+        boolean result = sol.isPowerOfTwo(n);
+        System.out.println(result);
+
+        scanner.close();
     }
 }
 
@@ -42,8 +45,8 @@ public class Main
 
 ## Output:
 
-<img width="768" height="297" alt="image" src="https://github.com/user-attachments/assets/0316db62-2960-44b3-bee8-8936fe6a3dbe" />
+<img width="742" height="333" alt="image" src="https://github.com/user-attachments/assets/8df5b9d7-0079-4b5d-9a89-4bf07dcee9e3" />
 
 
 ## Result:
-The program successfully print all the numbers from 1 to N. 
+The program successfully implemented and the expected output is verified.
